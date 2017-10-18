@@ -1,19 +1,5 @@
 ---
--
-  hosts: all
-  roles:
-    -
-      role: rvm_io.ruby
-      rvm1_install_flags: --auto-dotfiles
-      rvm1_install_path: /usr/local/rvm
-      rvm1_rubies:
-        - ruby-{{ruby_version}}
-      # was erroring on rvm update. Something about the GPG key
-      rvm1_rvm_check_for_updates: false
-      rvm1_user: root
-      tags: ruby
-  vars:
-    ruby_version: 2.3.4
+- import_playbook: ruby-playbook.yml
 -
   hosts: all
   become: true

@@ -9,8 +9,7 @@ The EC2 instance needs
 - git
 - "localhost" on `/etc/ansible/hosts`
 
-This should all be taken care of with user-data on EC2 launch using [this script]
-(https://gist.github.com/RyanSnodgrass/4d9388529dcb4ace09f880ce414c7ed9)
+This should all be taken care of with user-data on EC2 launch using [this script](https://gist.github.com/RyanSnodgrass/4d9388529dcb4ace09f880ce414c7ed9)
 
 The only thing it needs that the script can't handle is installing the RVM
 ansible role. For that run `ansible-galaxy install rvm_io.ruby`

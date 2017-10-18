@@ -1,0 +1,6 @@
+---
+- name: Download and unarchive elasticsearch file
+  unarchive:
+    dest: /usr/local/share/.
+    remote_src: true
+    src: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.3.tar.gz

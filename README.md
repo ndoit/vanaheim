@@ -1,5 +1,6 @@
 # Vanaheim
-EC2 Ansible inventory to install fenrir
+EC2 Ansible inventory to install [Fenrir.](https://github.com/ndoit/fenrir) Feel
+free to fork this and change it according to your needs.
 
 This uses a ansible PULL mode to run configuration.
 

@@ -1,0 +1,13 @@
+---
+- name: Download redis server
+  unarchive:
+    src: http://download.redis.io/redis-stable.tar.gz
+    dest: /usr/local/share
+    remote_src: true
+- name: Redis makefile
+  make:
+    chdir: /usr/local/share/redis-stable
+- name: redis install commands into path
+  make:
+    chdir: /usr/local/share/redis-stable
+    target: install

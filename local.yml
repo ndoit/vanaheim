@@ -27,3 +27,6 @@
         path: /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
     - import_tasks: redis-tasks.yml
     - import_tasks: elasticsearch-tasks.yml
+      vars:
+        elastic-version: 5.6.3
+        elastic-jvm-size: 500m

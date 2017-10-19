@@ -3,16 +3,16 @@
   unarchive:
     dest: /usr/local/share/.
     remote_src: true
-    src: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{elastic-version}}.tar.gz
+    src: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{elastic_version}}.tar.gz
 - name: Set initial JVM heap size for Elasticsearch
   lineinfile:
-    dest: /usr/local/share/elasticsearch-{{elastic-version}}/config/jvm.options
+    dest: /usr/local/share/elasticsearch-{{elastic_version}}/config/jvm.options
     state: present
     regexp: ^-Xms2g
-    line: -Xms{{elastic-jvm-size}}
+    line: -Xms{{elastic_jvm_size}}
 - name: Set maximum JVM heap size for Elasticsearch
   lineinfile:
-    dest: /usr/local/share/elasticsearch-{{elastic-version}}/config/jvm.options
+    dest: /usr/local/share/elasticsearch-{{elastic_version}}/config/jvm.options
     state: present
     regexp: ^-Xmx2g
-    line: -Xmx{{elastic-jvm-size}}
+    line: -Xmx{{elastic_jvm_size}}

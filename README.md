@@ -18,5 +18,5 @@ Ansible role. For that run `ansible-galaxy install rvm_io.ruby`
 ### Usage
 Run this on the EC2 instance you need to configure.
 ```
-$ ansible-pull -U https://github.com/ndoit/vanaheim
+$ ansible-pull -U https://github.com/ndoit/vanaheim --vault-password-file ~/.vault_pass.txt
 ```

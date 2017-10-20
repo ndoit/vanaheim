@@ -8,6 +8,7 @@
     - import_tasks: base-packages-tasks.yml
     - import_tasks: redis-tasks.yml
     - import_tasks: nginx-tasks.yml
+    - import_tasks: banner-tasks.yml
     # - import_tasks: elasticsearch-tasks.yml
     #   vars:
     #     elastic_version: 5.6.3

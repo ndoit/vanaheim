@@ -1,8 +1,4 @@
 ---
-- name: copy nginx repo into yum config
-  copy:
-    src: repos/nginx.repo
-    dest: /etc/yum.repos.d/nginx.repo
 - name: install nginx package
   yum:
     name: nginx

@@ -1,0 +1,24 @@
+---
+- name: install free-tds requirement for sequel gem
+  yum:
+    name: freetds
+    state: latest
+- name: install free-tds-devel requirement for sequel gem
+  yum:
+    name: freetds-devel
+    state: latest
+
+- name: install npm for javascript runner for rails
+  yum:
+    name: npm
+    state: latest
+
+- name: create directory to house application
+  file:
+    path: /apps/fenrir
+    state: directory
+- git:
+    repo: ssh://git@github.com/ndoit/fenrir.git
+    dest: /apps/fenrir
+    force: "yes"
+    accept_hostkey: true

@@ -61,3 +61,18 @@
     state: present
     regexp: ^ORACLE_HOME
     line: ORACLE_HOME=/usr/lib/oracle/12.2/client64/
+
+# Create oracle database connection .ora files. This will use ansible vault.
+# password in password safe
+- name: create network/admin directory
+  file:
+    path: /usr/lib/oracle/12.2/client64/network/admin
+    state: directory
+- name: copy oracle connection files into the network admin folder
+  copy:
+    src: "{{item}}"
+    dest: /usr/lib/oracle/12.2/client64/network/admin
+  with_items:
+    - oracle_files/ldap.ora
+    - oracle_files/sqlnet.ora
+    - oracle_files/tnsnames.ora

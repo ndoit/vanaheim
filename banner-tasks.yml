@@ -33,7 +33,7 @@
     state: present
 
 # Install secondary packages
-- name: install the libaio package as per install directions for instant client ruby-oci8
+- name: install  libaio package as per directions for instant client ruby-oci8
   yum:
     name: libaio
     state: latest
@@ -49,7 +49,7 @@
     state: present
     regexp: ^LD_LIBRARY_PATH
     line: LD_LIBRARY_PATH=/usr/lib/oracle/12.2/client64/lib/
-- name: set nls lang to prevent 'Warning NLS_LANG is not set. fallback to US7ASCII' error
+- name: prevent 'Warning NLS_LANG is not set. fallback to US7ASCII' error
   lineinfile:
     dest: /etc/environment
     state: present

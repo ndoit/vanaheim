@@ -31,3 +31,13 @@
   yum:
     name: /tmp/oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm
     state: present
+
+# Install secondary packages
+- name: install the libaio package as per install directions for instant client ruby-oci8
+  yum:
+    name: libaio
+    state: latest
+- name: install ruby-devel make dependency
+  yum:
+    name: ruby-devel
+    state: latest

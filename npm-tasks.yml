@@ -1,0 +1,10 @@
+---
+- name: Clone NPM
+  git:
+    repo: https://github.com/npm/npm.git
+    dest: /usr/local/share
+    force: "yes"
+- name: Make install NPM
+  make:
+    chdir: /usr/local/share/npm
+    target: install

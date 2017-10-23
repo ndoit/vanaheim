@@ -1,8 +1,12 @@
 ---
+- name: create NPM directory
+  file:
+    path: /usr/local/share/npm
+    state: directory
 - name: Clone NPM
   git:
     repo: https://github.com/npm/npm.git
-    dest: /usr/local/share
+    dest: /usr/local/share/npm
     force: "yes"
 - name: Make install NPM
   make:

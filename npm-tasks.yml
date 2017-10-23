@@ -1,14 +1,8 @@
 ---
-- name: create NPM directory
-  file:
-    path: /usr/local/share/npm
-    state: directory
-- name: Clone NPM
-  git:
-    repo: https://github.com/npm/npm.git
-    dest: /usr/local/share/npm
-    force: "yes"
-- name: Make install NPM
-  make:
-    chdir: /usr/local/share/npm
-    target: install
+- name: create nodesource repo
+  command: curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+- name: Yum install nodejs
+  yum:
+    name: nodejs
+    state: latest
+    enablerepo: nodesource

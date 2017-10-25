@@ -10,16 +10,16 @@
 
 - name: create directory to house application
   file:
-    path: /apps/fenrir
+    path: /apps/{{app_name}}
     state: directory
-- name: checkout application "Fenrir"
+- name: checkout application "{{app_name}}"
   git:
-    repo: https://github.com/ndoit/fenrir.git
-    dest: /apps/fenrir
+    repo: https://github.com/ndoit/{{app_name}}.git
+    dest: /apps/{{app_name}}
     force: "yes"
     accept_hostkey: true
 - name: bundle install
   bundler:
     state: present
-    chdir: /apps/fenrir
+    chdir: /apps/{{app_name}}
     executable: /usr/local/bin/bundler

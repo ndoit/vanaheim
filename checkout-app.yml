@@ -13,7 +13,7 @@
     path: /apps/fenrir
     state: directory
 - git:
-    repo: ssh://git@github.com/ndoit/fenrir.git
+    repo: https://github.com/ndoit/fenrir.git
     dest: /apps/fenrir
     force: "yes"
     accept_hostkey: true

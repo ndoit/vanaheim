@@ -12,7 +12,8 @@
   file:
     path: /apps/fenrir
     state: directory
-- git:
+- name: checkout application "Fenrir"
+  git:
     repo: https://github.com/ndoit/fenrir.git
     dest: /apps/fenrir
     force: "yes"

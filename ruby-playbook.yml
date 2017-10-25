@@ -6,6 +6,7 @@
       role: rvm_io.ruby
       rvm1_install_flags: --auto-dotfiles
       rvm1_install_path: /usr/local/rvm
+      rvm1_bundler_install: true
       rvm1_rubies:
         - ruby-{{ruby_version}}
       # was erroring on rvm update. Something about the GPG key

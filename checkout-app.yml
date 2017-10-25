@@ -22,4 +22,4 @@
   bundler:
     state: present
     chdir: /apps/fenrir
-    executable: /usr/local/bin
+    executable: /usr/local/bin/bundler

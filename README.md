@@ -20,6 +20,10 @@ only caveat is it has to all be run as root as that's how the user-data is run.
 The ansible vault password is on password safe. To use it create a file called
 `.vault_pass.txt` in the home `~` directory and put the password as the only
 entry in it. The usage command will look in that file and use that for decryption.
+```
+touch ~/.vault_pass.txt
+echo mYSuperSecretPassw0rd >> ~/.vault_pass.txt
+```
 
 ### Usage
 Run this on the EC2 instance you need to configure.

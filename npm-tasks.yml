@@ -1,6 +1,32 @@
 ---
-- name: install NPM
+- name: install gcc
   yum:
-    name: npm
+    name: gcc
     state: latest
-    enablerepo: epel
+- name: install gcc-c+
+  yum:
+    name: gcc-c++
+    state: latest
+- name: install make
+  yum:
+    name: make
+    state: latest
+- name: install openssl-devel
+  yum:
+    name: openssl-devel
+    state: latest
+- name: Get installed version of node
+  command: node -v
+  changed_when: false
+  failed_when: false
+  register: node_installed_version
+- name: get installed version of npm
+  command: npm -v
+  changed_when: false
+  failed_when: false
+  register: npm_installed_version
+- name: download node js distribution
+  unarchive:
+    src: https://nodejs.org/dist/v6.11.5/node-v6.11.5.tar.gz
+    dest: /tmp
+    remote_src: true

@@ -18,3 +18,7 @@
     dest: /apps/fenrir
     force: "yes"
     accept_hostkey: true
+- name: bundle install
+  bundler:
+    state: present
+    chdir: /apps/fenrir
